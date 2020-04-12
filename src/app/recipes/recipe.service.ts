@@ -28,6 +28,10 @@ private recipes: Recipe[] = [
     getRecipes() {
         return this.recipes.slice();
     }
+
+    getRecipe(id: number) {
+        return this.recipes[id];
+    }
     
     addIngredientsToSHoppingList(ingredients: Ingredient[]){
         this.shoppingListService.addIngredients(ingredients);
