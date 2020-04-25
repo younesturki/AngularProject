@@ -16,7 +16,7 @@ export class ShoppingListService {
       getIngredient(index: number) {
           return this.ingredients[index];
       }
-      
+
       addIngredient(ingredient: Ingredient){
           this.ingredients.push(ingredient);
           this.ingredientsChanged.next(this.ingredients.slice());
@@ -24,6 +24,11 @@ export class ShoppingListService {
 
       addIngredients(ingredients: Ingredient[]){
           this.ingredients.push(...ingredients);
+          this.ingredientsChanged.next(this.ingredients.slice());
+      }
+
+      updateIngredient(index: number, newIngredient: Ingredient) {
+          this.ingredients[index] = newIngredient;
           this.ingredientsChanged.next(this.ingredients.slice());
       }
 
