@@ -44,6 +44,11 @@ private recipes: Recipe[] = [
         this.recipeChanged.next(this.recipes.slice());
     }
 
+    setRecipes(recipes: Recipe[]) {
+        this.recipes = recipes;
+        this.recipeChanged.next(this.recipes.slice());
+    }
+
     updateRecipe(index: number , newReicpe: Recipe) {
         this.recipes[index] = newReicpe;
         this.recipeChanged.next(this.recipes.slice());
